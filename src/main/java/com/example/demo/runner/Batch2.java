@@ -8,15 +8,15 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BatchRunner implements ApplicationRunner {
+public class Batch2 implements ApplicationRunner {
 
     @Autowired
     HelloService helloService;
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
-
+        if (!applicationArguments.containsOption("Batch2")) return;
         helloService.sayHello();
-
+        System.out.println("=== from Batch 2 ===");
     }
 }
